@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全台職業駕駛人商業與動態時間軸視覺化</title>
+    <title>全台職業駕駛人商業與動態演進分析儀表板</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -13,7 +13,6 @@
 
     <div id="app" class="max-w-6xl mx-auto space-y-6">
 
-        <!-- 頁首與時間軸自動播放控制列 (Executive Player Bar) -->
         <header
             class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl border border-slate-800 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div>
@@ -29,7 +28,6 @@
                 <p class="text-xs md:text-sm text-slate-400 mt-1">結合時間軸自動演進播放、雙向蝴蝶金字塔與 3 大商業決策視角</p>
             </div>
 
-            <!-- 自動播放與時間軸 Slider 播放器 -->
             <div
                 class="bg-slate-800/90 border border-slate-700 p-4 rounded-xl flex flex-col md:flex-row items-center gap-4 w-full lg:w-auto shadow-inner">
                 <button @click="togglePlay"
@@ -53,18 +51,15 @@
             </div>
         </header>
 
-        <!-- 載入中 -->
         <div v-if="loading" class="bg-white rounded-xl p-12 text-center text-slate-500 shadow-sm border">
             <div
                 class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent mb-2">
             </div>
-            <p>正在初始化全台歷史數據庫...</p>
+            <p>正在載入數據中...</p>
         </div>
 
-        <!-- 主數據內容 -->
         <main v-else-if="data" class="space-y-6">
 
-            <!-- 1. 頂部 3 大 Executive KPI 卡片 (隨時間軸切換即時變更) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-white border rounded-xl p-5 shadow-sm space-y-1">
                     <span class="text-xs font-semibold text-slate-500">{{ currentSelectedPeriod }} 全國職業駕駛總數</span>
@@ -87,7 +82,6 @@
                 </div>
             </div>
 
-            <!-- 2. 四大車種動態卡片 (含真實歷史人數與增減率) -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div class="bg-white border rounded-xl p-4 shadow-sm space-y-1">
                     <div class="flex justify-between items-center text-xs text-slate-500">
@@ -135,10 +129,7 @@
                 </div>
             </div>
 
-            <!-- 3. 大尺寸雙圖表區 (大全寬 SVG 折線圖 + 主計總處風格蝴蝶對比圖) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-                <!-- 全寬大尺寸 SVG 歷史趨勢折線圖 (8 欄) -->
                 <div class="lg:col-span-7 bg-white rounded-2xl p-6 shadow-sm border space-y-4">
                     <div class="flex justify-between items-center border-b pb-3">
                         <div>
@@ -148,7 +139,6 @@
                         <span class="text-xs text-blue-600 font-semibold">104年 ～ 114年 完整走勢</span>
                     </div>
 
-                    <!-- SVG 折線圖 -->
                     <div class="relative w-full h-56 pt-2">
                         <svg class="w-full h-full overflow-visible" viewBox="0 0 1000 180" preserveAspectRatio="none">
                             <defs>
@@ -166,7 +156,6 @@
                             <polyline :points="svgLinePoints" fill="none" stroke="#2563eb" stroke-width="4"
                                 stroke-linecap="round" stroke-linejoin="round" />
 
-                            <!-- 當前選擇年份的【動態定位紅線 Cursor Line】 -->
                             <line v-if="activeCursorX !== null" :x1="activeCursorX" y1="10" :x2="activeCursorX" y2="140"
                                 stroke="#ef4444" stroke-width="2" stroke-dasharray="4" />
 
@@ -190,7 +179,6 @@
                     </div>
                 </div>
 
-                <!-- 主計總處風格：雙向對比蝴蝶金字塔圖 (5 欄) -->
                 <div
                     class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 shadow-xl border border-slate-800 space-y-4">
                     <div class="flex justify-between items-center border-b border-slate-800 pb-3">
@@ -210,13 +198,11 @@
                             </div>
 
                             <div class="flex items-center gap-1 h-3.5">
-                                <!-- 左側：重型物流 (藍綠色) -->
                                 <div class="flex-1 bg-slate-800 h-full rounded-l overflow-hidden flex justify-end">
                                     <div class="bg-cyan-500 h-full transition-all duration-700 ease-out rounded-l"
                                         :style="{ width: `${(item.heavy / maxPyramidVal) * 100}%` }"></div>
                                 </div>
                                 <div class="w-1 bg-slate-700 h-full"></div>
-                                <!-- 右側：客運乘車 (黃橘色) -->
                                 <div class="flex-1 bg-slate-800 h-full rounded-r overflow-hidden flex justify-start">
                                     <div class="bg-amber-500 h-full transition-all duration-700 ease-out rounded-r"
                                         :style="{ width: `${(item.passenger / maxPyramidVal) * 100}%` }"></div>
@@ -225,13 +211,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- 4. 三大商業視角切換器與全台 22 縣市排行榜 (全功能保留) -->
             <section class="bg-white rounded-2xl p-6 shadow-sm border space-y-6">
-
-                <!-- 三大視角切換頁籤 -->
                 <div class="bg-slate-100 p-2 rounded-xl border flex flex-wrap gap-2">
                     <button @click="currentView = 'logistics'"
                         :class="currentView === 'logistics' ? 'bg-blue-600 text-white shadow-sm' : 'bg-white text-slate-600 hover:bg-slate-200'"
@@ -269,7 +251,6 @@
                         </button>
                     </div>
 
-                    <!-- 全台縣市列表 -->
                     <div class="space-y-3">
                         <div v-for="(item, idx) in visibleDistribution" :key="item.region"
                             class="border rounded-xl p-4 hover:border-blue-400 transition cursor-pointer"
@@ -281,20 +262,17 @@
                                     <span class="w-6 font-bold text-slate-400 text-center text-sm">{{ idx + 1 }}</span>
                                     <span class="font-bold text-slate-900 text-base">{{ item.region }}</span>
 
-                                    <!-- 動態 Persona 標籤 -->
                                     <span :class="getDynamicPersonaStyle(item)"
                                         class="text-xs font-semibold px-2.5 py-1 rounded-md border">
                                         {{ getDynamicPersona(item) }}
                                     </span>
                                 </div>
 
-                                <!-- 排行長條 (相對第一名拉滿) -->
                                 <div class="flex-1 bg-slate-100 h-3.5 rounded-full overflow-hidden">
                                     <div class="bg-blue-600 h-full transition-all duration-500"
                                         :style="{ width: item.barWidthPct + '%' }"></div>
                                 </div>
 
-                                <!-- 數據與全台佔比 -->
                                 <div class="text-right min-w-[160px]">
                                     <span class="font-bold text-slate-900 text-sm">{{
                                         formatNum(getPerspectiveValue(item)) }} 人</span>
@@ -303,7 +281,6 @@
                                 </div>
                             </div>
 
-                            <!-- 點擊展開：商業建議與細部車種 -->
                             <div v-if="activeRegion === item.region"
                                 class="mt-4 pt-4 border-t border-dashed border-slate-300 space-y-3">
                                 <div
@@ -353,7 +330,7 @@
                 const isPlaying = ref(false);
                 const activeRegion = ref(null);
                 const showAll = ref(true);
-                const currentView = ref('passenger'); // 'logistics' | 'passenger' | 'market'
+                const currentView = ref('passenger');
                 let timer = null;
 
                 const formatNum = (num) => new Intl.NumberFormat('zh-TW').format(num || 0);
@@ -361,11 +338,8 @@
                 const trend = computed(() => data.value?.trendData || { periods: ['114年'], nationalTotalHistory: [455084], categoryHistory: { taxi: [178825], heavyTruck: [94985], bus: [85166], trailer: [96108] } });
 
                 const currentSelectedPeriod = computed(() => trend.value.periods[currentPeriodIdx.value] || '114年底');
-
-                // 當期歷史總數
                 const currentPeriodTotal = computed(() => trend.value.nationalTotalHistory[currentPeriodIdx.value] || 0);
 
-                // 當期四大車種數值
                 const currentCat = computed(() => {
                     const cat = trend.value.categoryHistory;
                     const idx = currentPeriodIdx.value;
@@ -393,7 +367,6 @@
                     };
                 });
 
-                // 當期最高集中度縣市
                 const currentTopRegion = computed(() => {
                     if (!data.value?.distribution) return { name: '無', total: 0 };
                     const list = [...data.value.distribution].sort((a, b) => b.total - a.total);
@@ -411,7 +384,6 @@
                     return ((heavy / currentPeriodTotal.value) * 100).toFixed(1);
                 });
 
-                // 大尺寸 SVG 歷史趨勢圖計算
                 const parsedPoints = computed(() => {
                     const arr = trend.value.nationalTotalHistory;
                     if (!arr || arr.length === 0) return [];
@@ -439,7 +411,6 @@
                     return pt ? pt.x : null;
                 });
 
-                // 雙向對比金字塔數據
                 const dynamicRegionList = computed(() => {
                     if (!data.value?.distribution) return [];
                     const factor = 1 + (currentPeriodIdx.value - 5) * 0.02;
@@ -459,7 +430,6 @@
                     return m || 1;
                 });
 
-                // 視角標題
                 const viewTitle = computed(() => {
                     if (currentView.value === 'logistics') return '重型物流運能視角';
                     if (currentView.value === 'passenger') return '客運與小黃乘車視角';
@@ -557,55 +527,45 @@
                 const fetchData = async () => {
                     loading.value = true;
                     try {
-                        // 1. 嘗試呼叫 Express Node.js API (本地開發模式)
-                        try {
-                            const res = await fetch('/public/professional-driver-distribution');
-                            if (res.ok) {
-                                const json = await res.json();
-                                if (json && json.data) {
-                                    data.value = json.data;
-                                    return;
-                                }
-                            }
-                        } catch (e) {
-                            // 忽略 404 錯誤，轉入 GitHub Pages 靜態讀取模式
-                        }
-                        // 2. GitHub Pages 純靜態發布模式：直接讀取 data/history_db.json
-                        const resStatic = await fetch('./data/history_db.json');
-                        if (resStatic.ok) {
-                            const db = await resStatic.json();
-                            const series = db.series || [];
-                            const latest = series[series.length - 1] || {};
-                            data.value = {
-                                dataAsOf: latest.period || '114年底',
-                                sourceStatus: 'LIVE_HISTORICAL_DB',
-                                totalNational: latest.totalNational || 455084,
-                                distribution: Object.entries(latest.regions || {}).map(([region, bd]) => ({
-                                    region,
-                                    total: bd.total,
-                                    breakdown: bd
-                                })),
-                                trendData: {
-                                    periods: db.periods || [],
-                                    nationalTotalHistory: series.map(s => s.totalNational),
-                                    categoryHistory: {
-                                        taxi: series.map(s => s.categories.taxi),
-                                        heavyTruck: series.map(s => s.categories.heavyTruck),
-                                        bus: series.map(s => s.categories.bus),
-                                        trailer: series.map(s => s.categories.trailer)
+                        // 雙模：GitHub Pages 優先讀取 ./data/history_db.json
+                        const isGitHubPages = location.hostname.includes('github.io');
+                        if (!isGitHubPages) {
+                            try {
+                                const res = await fetch('/public/professional-driver-distribution');
+                                if (res.ok) {
+                                    const json = await res.json();
+                                    if (json && json.data) {
+                                        data.value = json.data;
+                                        return;
                                     }
-                                },
-                                source: {
-                                    name: '領有各型機動車駕駛執照人數 (歷史 CSV 匯入檔)',
-                                    publisher: '交通部公路局',
-                                    url: 'https://stat.thb.gov.tw/'
                                 }
-                            };
-                        } else {
-                            throw new Error('無法載入歷史資料庫');
+                            } catch (e) { }
                         }
-                    } catch (err) {
-                        console.error('Fetch error:', err);
+
+                        const resStatic = await fetch('./data/history_db.json');
+                        const db = await resStatic.json();
+                        const series = db.series || [];
+                        const latest = series[series.length - 1] || {};
+
+                        data.value = {
+                            dataAsOf: latest.period || '114年底',
+                            sourceStatus: 'LIVE_HISTORICAL_DB',
+                            totalNational: latest.totalNational || 455084,
+                            distribution: Object.entries(latest.regions || {}).map(([region, bd]) => ({ region, total: bd.total, breakdown: bd })),
+                            trendData: {
+                                periods: db.periods || [],
+                                nationalTotalHistory: series.map(s => s.totalNational),
+                                categoryHistory: {
+                                    taxi: series.map(s => s.categories.taxi),
+                                    heavyTruck: series.map(s => s.categories.heavyTruck),
+                                    bus: series.map(s => s.categories.bus),
+                                    trailer: series.map(s => s.categories.trailer)
+                                }
+                            },
+                            source: { name: '領有各型機動車駕駛執照人數', publisher: '交通部公路局', url: 'https://stat.thb.gov.tw/' }
+                        };
+                    } catch (e) {
+                        console.error(e);
                     } finally {
                         loading.value = false;
                     }

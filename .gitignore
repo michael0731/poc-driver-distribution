@@ -1,0 +1,17 @@
+# 依賴套件
+node_modules/
+
+# 系統與日誌檔案
+*.log
+.DS_Store
+Thumbs.db
+
+# 暫存與 IDE 設定
+.vscode/
+.idea/
+
+#其他
+*.xlsx
+*.ods
+excel_imports/*.xlsx    
+excel_imports/*.ods 

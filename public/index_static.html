@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全台職業駕駛人真實歷史與趨勢統計分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans p-4 md:p-8">
+
+    <div id="app" class="max-w-6xl mx-auto space-y-6">
+
+        <header
+            class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
+                        公路局官方真實歷史數據
+                    </span>
+                    <span class="text-xs text-gray-400">時間序列分析 ({{ trend.periods.length }} 個期別)</span>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-900">全台職業駕駛人數據與趨勢統計分析</h1>
+                <p class="text-sm text-gray-500 mt-1">追蹤全台與分車種持照人數走勢，掌握缺工風險與運能成長動能</p>
+            </div>
+            <button @click="fetchData"
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition shadow-sm">
+                重新整理數據
+            </button>
+        </header>
+
+        <div v-if="loading" class="bg-white rounded-xl p-12 text-center text-gray-500 shadow-sm border">
+            <div
+                class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent mb-2">
+            </div>
+            <p>正在載入歷史數據...</p>
+        </div>
+
+        <main v-else-if="data" class="space-y-6">
+
+            <!-- 趨勢統計指標專區 -->
+            <section class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 space-y-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b pb-4">
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                            📈 全台職業駕駛持照人數【真實歷史趨勢圖】
+                        </h2>
+                        <p class="text-xs text-gray-500 mt-0.5">跨期數據追蹤（{{ trend.periods[0] }} ～ {{
+                            trend.periods[trend.periods.length - 1] }}）</p>
+                    </div>
+
+                    <div class="flex gap-3 text-xs font-semibold">
+                        <div
+                            class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-lg flex items-center gap-1">
+                            <span>全期累積變動率：</span>
+                            <b class="text-sm">{{ trend.yoyGrowthRate >= 0 ? '+' : '' }}{{ trend.yoyGrowthRate }}%</b>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4大車種卡片 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="bg-gray-50 border rounded-xl p-3.5 space-y-1">
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>🚗 職業小型車</span>
+                            <span :class="catRates.taxi >= 0 ? 'text-emerald-600 font-bold' : 'text-red-600 font-bold'">
+                                {{ catRates.taxi >= 0 ? '▲ +' : '▼ ' }}{{ catRates.taxi }}%
+                            </span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-900">{{ formatNum(latestCat.taxi) }} 人</div>
+                        <p class="text-[11px] text-gray-500">最新期持照人數</p>
+                    </div>
+
+                    <div class="bg-gray-50 border rounded-xl p-3.5 space-y-1">
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>🚛 職業聯結車</span>
+                            <span
+                                :class="catRates.trailer >= 0 ? 'text-emerald-600 font-bold' : 'text-red-600 font-bold'">
+                                {{ catRates.trailer >= 0 ? '▲ +' : '▼ ' }}{{ catRates.trailer }}%
+                            </span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-900">{{ formatNum(latestCat.trailer) }} 人</div>
+                        <p class="text-[11px] text-gray-500">最新期持照人數</p>
+                    </div>
+
+                    <div class="bg-gray-50 border rounded-xl p-3.5 space-y-1">
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>🚚 職業大貨車</span>
+                            <span
+                                :class="catRates.heavyTruck >= 0 ? 'text-emerald-600 font-bold' : 'text-red-600 font-bold'">
+                                {{ catRates.heavyTruck >= 0 ? '▲ +' : '▼ ' }}{{ catRates.heavyTruck }}%
+                            </span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-900">{{ formatNum(latestCat.heavyTruck) }} 人</div>
+                        <p class="text-[11px] text-gray-500">最新期持照人數</p>
+                    </div>
+
+                    <div class="bg-gray-50 border rounded-xl p-3.5 space-y-1">
+                        <div class="flex justify-between items-center text-xs text-gray-500">
+                            <span>🚌 職業大客車</span>
+                            <span :class="catRates.bus >= 0 ? 'text-emerald-600 font-bold' : 'text-red-600 font-bold'">
+                                {{ catRates.bus >= 0 ? '▲ +' : '▼ ' }}{{ catRates.bus }}%
+                            </span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-900">{{ formatNum(latestCat.bus) }} 人</div>
+                        <p class="text-[11px] text-gray-500">最新期持照人數</p>
+                    </div>
+                </div>
+
+                <!-- SVG 歷史趨勢折線圖 -->
+                <div class="bg-gradient-to-b from-gray-50 to-white border rounded-xl p-5 space-y-3">
+                    <div class="text-xs font-bold text-gray-700 flex justify-between items-center">
+                        <span>全台職業駕駛總人數歷史趨勢走勢圖 (104年 ～ 114年)</span>
+                        <span class="text-gray-400 font-normal">藍線：持照總人數走勢</span>
+                    </div>
+
+                    <div class="relative w-full h-48 pt-2">
+                        <svg class="w-full h-full overflow-visible" viewBox="0 0 1000 160" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0" />
+                                </linearGradient>
+                            </defs>
+
+                            <line x1="0" y1="20" x2="1000" y2="20" stroke="#f3f4f6" stroke-dasharray="4" />
+                            <line x1="0" y1="70" x2="1000" y2="70" stroke="#f3f4f6" stroke-dasharray="4" />
+                            <line x1="0" y1="120" x2="1000" y2="120" stroke="#e5e7eb" />
+
+                            <polygon :points="svgAreaPoints" fill="url(#areaGradient)" />
+                            <polyline :points="svgLinePoints" fill="none" stroke="#2563eb" stroke-width="3.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+
+                            <g v-for="(pt, i) in parsedPoints" :key="i">
+                                <circle :cx="pt.x" :cy="pt.y" r="5" fill="#ffffff" stroke="#2563eb" stroke-width="3" />
+                                <text :x="pt.x" :y="pt.y - 12" text-anchor="middle" fill="#1e40af" font-size="11"
+                                    font-weight="bold">
+                                    {{ formatNum(pt.val) }}
+                                </text>
+                                <text :x="pt.x" y="152" text-anchor="middle" fill="#6b7280" font-size="11">
+                                    {{ trend.periods[i] }}
+                                </text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 排行榜與動態視角區 -->
+            <section class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 space-y-6">
+
+                <div class="bg-gray-50 p-2 rounded-xl border flex flex-wrap gap-2">
+                    <button @click="currentView = 'logistics'"
+                        :class="currentView === 'logistics' ? 'bg-blue-600 text-white shadow-sm' : 'bg-white text-gray-600 hover:bg-gray-100'"
+                        class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition">
+                        📦 物流轉運視角
+                    </button>
+
+                    <button @click="currentView = 'passenger'"
+                        :class="currentView === 'passenger' ? 'bg-blue-600 text-white shadow-sm' : 'bg-white text-gray-600 hover:bg-gray-100'"
+                        class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition">
+                        🚕 客運與乘車視角
+                    </button>
+
+                    <button @click="currentView = 'market'"
+                        :class="currentView === 'market' ? 'bg-blue-600 text-white shadow-sm' : 'bg-white text-gray-600 hover:bg-gray-100'"
+                        class="flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition">
+                        🛡️ 車商與產險拓點視角
+                    </button>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h3 class="text-base font-bold text-gray-900">
+                                全台縣市商業 Persona 排行榜
+                                <span class="text-xs font-normal text-blue-600 ml-2">
+                                    (當前：{{ viewTitle }}，全台總和 {{ formatNum(totalPerspectiveSum) }} 人)
+                                </span>
+                            </h3>
+                            <p class="text-xs text-gray-400">百分比表示該縣市【佔全台總人數之比例 (全台佔比)】</p>
+                        </div>
+                        <button @click="showAll = !showAll" class="text-xs text-blue-600 hover:underline font-medium">
+                            {{ showAll ? '顯示前 6 大縣市' : `顯示全台 22 縣市` }}
+                        </button>
+                    </div>
+
+                    <!-- 縣市列表 -->
+                    <div class="space-y-3">
+                        <div v-for="(item, idx) in visibleDistribution" :key="item.region"
+                            class="border rounded-xl p-4 hover:border-blue-300 transition cursor-pointer"
+                            :class="activeRegion === item.region ? 'bg-blue-50/30 border-blue-400' : 'bg-white'"
+                            @click="activeRegion = activeRegion === item.region ? null : item.region">
+
+                            <div class="flex flex-col md:flex-row md:items-center gap-3">
+                                <div class="flex items-center gap-3 min-w-[220px]">
+                                    <span class="w-6 font-bold text-gray-400 text-center text-sm">{{ idx + 1 }}</span>
+                                    <span class="font-bold text-gray-900 text-base">{{ item.region }}</span>
+
+                                    <span :class="getDynamicPersonaStyle(item)"
+                                        class="text-xs font-semibold px-2.5 py-1 rounded-md border">
+                                        {{ getDynamicPersona(item) }}
+                                    </span>
+                                </div>
+
+                                <!-- 排行長條 (長條寬度相對第一名比例，確保排版滿格) -->
+                                <div class="flex-1 bg-gray-100 h-3 rounded-full overflow-hidden">
+                                    <div class="bg-blue-600 h-full transition-all duration-500"
+                                        :style="{ width: item.barWidthPct + '%' }"></div>
+                                </div>
+
+                                <!-- 數據數值與【真實全台佔比】 -->
+                                <div class="text-right min-w-[160px]">
+                                    <span class="font-bold text-gray-900 text-sm">{{
+                                        formatNum(getPerspectiveValue(item)) }} 人</span>
+                                    <span class="text-xs font-semibold text-blue-600 ml-1">({{ item.nationalSharePct
+                                        }}%)</span>
+                                </div>
+                            </div>
+
+                            <!-- 展開詳細 -->
+                            <div v-if="activeRegion === item.region"
+                                class="mt-4 pt-4 border-t border-dashed border-gray-300 space-y-3">
+                                <div
+                                    class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs bg-white p-3 rounded-lg border">
+                                    <div>🚗 職業小型車: <b class="text-gray-900">{{ formatNum(item.breakdown.taxi) }}</b>
+                                    </div>
+                                    <div>🚚 職業大貨車: <b class="text-gray-900">{{ formatNum(item.breakdown.heavyTruck)
+                                            }}</b></div>
+                                    <div>🚌 職業大客車: <b class="text-gray-900">{{ formatNum(item.breakdown.bus) }}</b>
+                                    </div>
+                                    <div>🚛 職業聯結車: <b class="text-gray-900">{{ formatNum(item.breakdown.trailer) }}</b>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="pt-4 border-t text-xs text-gray-400 flex justify-between">
+                    <span>資料期間：{{ data.dataAsOf }} (真實歷史 CSV 解析資料庫)</span>
+                    <a :href="data.source.url" target="_blank" class="text-blue-500 hover:underline">
+                        來源：{{ data.source.publisher }} - {{ data.source.name }}
+                    </a>
+                </footer>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+        const { createApp, ref, computed, onMounted } = Vue;
+
+        createApp({
+            setup() {
+                const loading = ref(true);
+                const data = ref(null);
+                const activeRegion = ref(null);
+                const showAll = ref(true);
+                const currentView = ref('passenger'); // 'logistics' | 'passenger' | 'market'
+
+                const formatNum = (num) => new Intl.NumberFormat('zh-TW').format(num || 0);
+
+                const trend = computed(() => data.value?.trendData || { periods: [], nationalTotalHistory: [], categoryHistory: { taxi: [], heavyTruck: [], bus: [], trailer: [] } });
+
+                const latestCat = computed(() => {
+                    const cat = trend.value.categoryHistory;
+                    return {
+                        taxi: cat.taxi?.[cat.taxi.length - 1] || 0,
+                        heavyTruck: cat.heavyTruck?.[cat.heavyTruck.length - 1] || 0,
+                        bus: cat.bus?.[cat.bus.length - 1] || 0,
+                        trailer: cat.trailer?.[cat.trailer.length - 1] || 0,
+                    };
+                });
+
+                const catRates = computed(() => {
+                    const calc = (arr) => {
+                        if (!arr || arr.length < 2) return 0;
+                        const c = arr[arr.length - 1];
+                        const p = arr[0];
+                        return p > 0 ? Number((((c - p) / p) * 100).toFixed(1)) : 0;
+                    };
+                    const cat = trend.value.categoryHistory;
+                    return {
+                        taxi: calc(cat.taxi),
+                        heavyTruck: calc(cat.heavyTruck),
+                        bus: calc(cat.bus),
+                        trailer: calc(cat.trailer)
+                    };
+                });
+
+                const parsedPoints = computed(() => {
+                    const arr = trend.value.nationalTotalHistory;
+                    if (!arr || arr.length === 0) return [];
+
+                    const min = Math.min(...arr) * 0.98;
+                    const max = Math.max(...arr) * 1.02;
+                    const stepX = 1000 / (arr.length - 1 || 1);
+
+                    return arr.map((val, i) => {
+                        const x = Math.round(i * stepX);
+                        const y = Math.round(120 - ((val - min) / (max - min)) * 100);
+                        return { x, y, val };
+                    });
+                });
+
+                const svgLinePoints = computed(() => parsedPoints.value.map(p => `${p.x},${p.y}`).join(' '));
+
+                const svgAreaPoints = computed(() => {
+                    const pts = parsedPoints.value;
+                    if (pts.length === 0) return '';
+                    return `${pts[0].x},140 ${svgLinePoints.value} ${pts[pts.length - 1].x},140`;
+                });
+
+                const viewTitle = computed(() => {
+                    if (currentView.value === 'logistics') return '重型物流運能視角';
+                    if (currentView.value === 'passenger') return '客運與小黃乘車視角';
+                    return '車隊與保單市場規模';
+                });
+
+                const getPerspectiveValue = (item) => {
+                    if (currentView.value === 'logistics') return item.breakdown.heavyTruck + item.breakdown.trailer;
+                    if (currentView.value === 'passenger') return item.breakdown.taxi + item.breakdown.bus;
+                    return item.total;
+                };
+
+                // 當前視角之全台總人數
+                const totalPerspectiveSum = computed(() => {
+                    if (!data.value?.distribution) return 1;
+                    return data.value.distribution.reduce((acc, item) => acc + getPerspectiveValue(item), 0);
+                });
+
+                const processedDistribution = computed(() => {
+                    if (!data.value?.distribution) return [];
+
+                    const totalSum = totalPerspectiveSum.value || 1;
+                    const list = data.value.distribution.map(item => {
+                        const val = getPerspectiveValue(item);
+                        return { ...item, pVal: val };
+                    }).sort((a, b) => b.pVal - a.pVal);
+
+                    const maxPVal = list[0]?.pVal || 1;
+
+                    return list.map(item => ({
+                        ...item,
+                        barWidthPct: Number(((item.pVal / maxPVal) * 100).toFixed(1)), // 長條滿格比例
+                        nationalSharePct: Number(((item.pVal / totalSum) * 100).toFixed(1)) // 🌟 正確的全台佔比 🌟
+                    }));
+                });
+
+                const visibleDistribution = computed(() => {
+                    const list = processedDistribution.value;
+                    return showAll.value ? list : list.slice(0, 6);
+                });
+
+                const getDynamicPersona = (item) => {
+                    const bd = item.breakdown;
+                    const heavy = bd.heavyTruck + bd.trailer;
+
+                    if (currentView.value === 'logistics') {
+                        if (heavy > 20000) return '🌟 全國特級物流樞紐';
+                        if (heavy > 10000) return '📦 大型物流重鎮';
+                        return '🚚 區域物流節點';
+                    } else if (currentView.value === 'passenger') {
+                        if (bd.taxi > 20000) return '🚕 計程/多元大本營';
+                        if (bd.bus > 5000) return '🚌 公車客運大本營';
+                        return '🚗 區域客運服務區';
+                    } else {
+                        if (item.total > 50000) return '💎 頂級車隊保單市場';
+                        if (item.total > 20000) return '💎💎 大型車隊市場';
+                        return '🔹 中型車隊市場';
+                    }
+                };
+
+                const getDynamicPersonaStyle = (item) => {
+                    const persona = getDynamicPersona(item);
+                    if (persona.includes('特級') || persona.includes('大本營') || persona.includes('頂級')) {
+                        return 'bg-blue-100 text-blue-800 border-blue-200';
+                    } else if (persona.includes('大型') || persona.includes('重鎮')) {
+                        return 'bg-purple-100 text-purple-800 border-purple-200';
+                    } else {
+                        return 'bg-gray-100 text-gray-700 border-gray-200';
+                    }
+                };
+
+                const fetchData = async () => {
+                    loading.value = true;
+                    try {
+                        const res = await fetch('/public/professional-driver-distribution');
+                        const json = await res.json();
+                        data.value = json.data;
+                    } catch (e) {
+                        alert('無法取得 API 資料');
+                    } finally {
+                        loading.value = false;
+                    }
+                };
+
+                onMounted(fetchData);
+
+                return {
+                    loading,
+                    data,
+                    trend,
+                    latestCat,
+                    catRates,
+                    parsedPoints,
+                    svgLinePoints,
+                    svgAreaPoints,
+                    currentView,
+                    viewTitle,
+                    totalPerspectiveSum,
+                    activeRegion,
+                    showAll,
+                    processedDistribution,
+                    visibleDistribution,
+                    getPerspectiveValue,
+                    getDynamicPersona,
+                    getDynamicPersonaStyle,
+                    formatNum,
+                    fetchData
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

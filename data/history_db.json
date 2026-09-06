@@ -1,0 +1,1845 @@
+{
+  "importedAt": "2026-09-06T20:53:23.225Z",
+  "totalPeriods": 11,
+  "periods": [
+    "104年底",
+    "105年底",
+    "106年底",
+    "107年底",
+    "108年底",
+    "109年底",
+    "110年底",
+    "111年底",
+    "112年底",
+    "113年底",
+    "114年底"
+  ],
+  "series": [
+    {
+      "period": "104年底",
+      "totalNational": 467000,
+      "categories": {
+        "taxi": 147171,
+        "heavyTruck": 118239,
+        "bus": 91941,
+        "trailer": 109649
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 46279,
+          "heavyTruck": 16707,
+          "bus": 21768,
+          "trailer": 11254,
+          "total": 96008
+        },
+        "台北市": {
+          "taxi": 28518,
+          "heavyTruck": 5325,
+          "bus": 9634,
+          "trailer": 3234,
+          "total": 46711
+        },
+        "桃園市": {
+          "taxi": 11712,
+          "heavyTruck": 12875,
+          "bus": 8030,
+          "trailer": 10800,
+          "total": 43417
+        },
+        "台中市": {
+          "taxi": 11635,
+          "heavyTruck": 12367,
+          "bus": 10728,
+          "trailer": 12286,
+          "total": 47016
+        },
+        "台南市": {
+          "taxi": 6586,
+          "heavyTruck": 11697,
+          "bus": 4408,
+          "trailer": 7841,
+          "total": 30532
+        },
+        "高雄市": {
+          "taxi": 12781,
+          "heavyTruck": 14195,
+          "bus": 9532,
+          "trailer": 18363,
+          "total": 54871
+        },
+        "宜蘭縣": {
+          "taxi": 2034,
+          "heavyTruck": 2984,
+          "bus": 2330,
+          "trailer": 3789,
+          "total": 11137
+        },
+        "新竹縣": {
+          "taxi": 1874,
+          "heavyTruck": 2971,
+          "bus": 1719,
+          "trailer": 2901,
+          "total": 9465
+        },
+        "苗栗縣": {
+          "taxi": 1581,
+          "heavyTruck": 3580,
+          "bus": 1794,
+          "trailer": 4060,
+          "total": 11015
+        },
+        "彰化縣": {
+          "taxi": 2679,
+          "heavyTruck": 8362,
+          "bus": 3839,
+          "trailer": 7074,
+          "total": 21954
+        },
+        "南投縣": {
+          "taxi": 1474,
+          "heavyTruck": 3344,
+          "bus": 3118,
+          "trailer": 3337,
+          "total": 11273
+        },
+        "雲林縣": {
+          "taxi": 1844,
+          "heavyTruck": 4523,
+          "bus": 1516,
+          "trailer": 4129,
+          "total": 12012
+        },
+        "嘉義縣": {
+          "taxi": 1640,
+          "heavyTruck": 3309,
+          "bus": 1509,
+          "trailer": 3123,
+          "total": 9581
+        },
+        "屏東縣": {
+          "taxi": 2067,
+          "heavyTruck": 5301,
+          "bus": 2843,
+          "trailer": 6552,
+          "total": 16763
+        },
+        "台東縣": {
+          "taxi": 1114,
+          "heavyTruck": 1825,
+          "bus": 923,
+          "trailer": 1866,
+          "total": 5728
+        },
+        "花蓮縣": {
+          "taxi": 2941,
+          "heavyTruck": 2359,
+          "bus": 1746,
+          "trailer": 2809,
+          "total": 9855
+        },
+        "澎湖縣": {
+          "taxi": 609,
+          "heavyTruck": 367,
+          "bus": 541,
+          "trailer": 222,
+          "total": 1739
+        },
+        "基隆市": {
+          "taxi": 6316,
+          "heavyTruck": 2434,
+          "bus": 3137,
+          "trailer": 3525,
+          "total": 15412
+        },
+        "新竹市": {
+          "taxi": 1344,
+          "heavyTruck": 1563,
+          "bus": 972,
+          "trailer": 956,
+          "total": 4835
+        },
+        "嘉義市": {
+          "taxi": 870,
+          "heavyTruck": 1207,
+          "bus": 706,
+          "trailer": 1028,
+          "total": 3811
+        },
+        "金門縣": {
+          "taxi": 1088,
+          "heavyTruck": 833,
+          "bus": 981,
+          "trailer": 478,
+          "total": 3380
+        },
+        "連江縣": {
+          "taxi": 185,
+          "heavyTruck": 111,
+          "bus": 167,
+          "trailer": 22,
+          "total": 485
+        }
+      }
+    },
+    {
+      "period": "105年底",
+      "totalNational": 462145,
+      "categories": {
+        "taxi": 147401,
+        "heavyTruck": 114700,
+        "bus": 92465,
+        "trailer": 107579
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 45137,
+          "heavyTruck": 15943,
+          "bus": 21808,
+          "trailer": 10897,
+          "total": 93785
+        },
+        "台北市": {
+          "taxi": 28274,
+          "heavyTruck": 5132,
+          "bus": 9530,
+          "trailer": 3103,
+          "total": 46039
+        },
+        "桃園市": {
+          "taxi": 12347,
+          "heavyTruck": 12796,
+          "bus": 8422,
+          "trailer": 10736,
+          "total": 44301
+        },
+        "台中市": {
+          "taxi": 12061,
+          "heavyTruck": 12160,
+          "bus": 10898,
+          "trailer": 12138,
+          "total": 47257
+        },
+        "台南市": {
+          "taxi": 6760,
+          "heavyTruck": 11527,
+          "bus": 4450,
+          "trailer": 7731,
+          "total": 30468
+        },
+        "高雄市": {
+          "taxi": 12994,
+          "heavyTruck": 13728,
+          "bus": 9702,
+          "trailer": 18106,
+          "total": 54530
+        },
+        "宜蘭縣": {
+          "taxi": 2017,
+          "heavyTruck": 2781,
+          "bus": 2321,
+          "trailer": 3675,
+          "total": 10794
+        },
+        "新竹縣": {
+          "taxi": 1936,
+          "heavyTruck": 2905,
+          "bus": 1698,
+          "trailer": 2805,
+          "total": 9344
+        },
+        "苗栗縣": {
+          "taxi": 1617,
+          "heavyTruck": 3476,
+          "bus": 1778,
+          "trailer": 3925,
+          "total": 10796
+        },
+        "彰化縣": {
+          "taxi": 2758,
+          "heavyTruck": 7977,
+          "bus": 3793,
+          "trailer": 6960,
+          "total": 21488
+        },
+        "南投縣": {
+          "taxi": 1501,
+          "heavyTruck": 3188,
+          "bus": 3055,
+          "trailer": 3246,
+          "total": 10990
+        },
+        "雲林縣": {
+          "taxi": 1865,
+          "heavyTruck": 4396,
+          "bus": 1500,
+          "trailer": 4047,
+          "total": 11808
+        },
+        "嘉義縣": {
+          "taxi": 1632,
+          "heavyTruck": 3199,
+          "bus": 1487,
+          "trailer": 3031,
+          "total": 9349
+        },
+        "屏東縣": {
+          "taxi": 2103,
+          "heavyTruck": 5124,
+          "bus": 2827,
+          "trailer": 6521,
+          "total": 16575
+        },
+        "台東縣": {
+          "taxi": 1128,
+          "heavyTruck": 1727,
+          "bus": 905,
+          "trailer": 1832,
+          "total": 5592
+        },
+        "花蓮縣": {
+          "taxi": 2994,
+          "heavyTruck": 2308,
+          "bus": 1782,
+          "trailer": 2761,
+          "total": 9845
+        },
+        "澎湖縣": {
+          "taxi": 598,
+          "heavyTruck": 372,
+          "bus": 532,
+          "trailer": 230,
+          "total": 1732
+        },
+        "基隆市": {
+          "taxi": 6138,
+          "heavyTruck": 2305,
+          "bus": 3134,
+          "trailer": 3373,
+          "total": 14950
+        },
+        "新竹市": {
+          "taxi": 1362,
+          "heavyTruck": 1521,
+          "bus": 949,
+          "trailer": 931,
+          "total": 4763
+        },
+        "嘉義市": {
+          "taxi": 892,
+          "heavyTruck": 1192,
+          "bus": 722,
+          "trailer": 997,
+          "total": 3803
+        },
+        "金門縣": {
+          "taxi": 1104,
+          "heavyTruck": 827,
+          "bus": 989,
+          "trailer": 509,
+          "total": 3429
+        },
+        "連江縣": {
+          "taxi": 183,
+          "heavyTruck": 116,
+          "bus": 183,
+          "trailer": 25,
+          "total": 507
+        }
+      }
+    },
+    {
+      "period": "106年底",
+      "totalNational": 460997,
+      "categories": {
+        "taxi": 150865,
+        "heavyTruck": 112125,
+        "bus": 92349,
+        "trailer": 105658
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 45658,
+          "heavyTruck": 15398,
+          "bus": 21792,
+          "trailer": 10502,
+          "total": 93350
+        },
+        "台北市": {
+          "taxi": 28391,
+          "heavyTruck": 4954,
+          "bus": 9390,
+          "trailer": 2981,
+          "total": 45716
+        },
+        "桃園市": {
+          "taxi": 13008,
+          "heavyTruck": 12774,
+          "bus": 8620,
+          "trailer": 10756,
+          "total": 45158
+        },
+        "台中市": {
+          "taxi": 12794,
+          "heavyTruck": 11845,
+          "bus": 10851,
+          "trailer": 11935,
+          "total": 47425
+        },
+        "台南市": {
+          "taxi": 7030,
+          "heavyTruck": 11322,
+          "bus": 4433,
+          "trailer": 7626,
+          "total": 30411
+        },
+        "高雄市": {
+          "taxi": 13438,
+          "heavyTruck": 13690,
+          "bus": 9826,
+          "trailer": 17841,
+          "total": 54795
+        },
+        "宜蘭縣": {
+          "taxi": 2108,
+          "heavyTruck": 2620,
+          "bus": 2305,
+          "trailer": 3557,
+          "total": 10590
+        },
+        "新竹縣": {
+          "taxi": 1991,
+          "heavyTruck": 2830,
+          "bus": 1656,
+          "trailer": 2742,
+          "total": 9219
+        },
+        "苗栗縣": {
+          "taxi": 1673,
+          "heavyTruck": 3417,
+          "bus": 1734,
+          "trailer": 3815,
+          "total": 10639
+        },
+        "彰化縣": {
+          "taxi": 2916,
+          "heavyTruck": 7721,
+          "bus": 3759,
+          "trailer": 6831,
+          "total": 21227
+        },
+        "南投縣": {
+          "taxi": 1543,
+          "heavyTruck": 2989,
+          "bus": 2967,
+          "trailer": 3192,
+          "total": 10691
+        },
+        "雲林縣": {
+          "taxi": 1917,
+          "heavyTruck": 4256,
+          "bus": 1463,
+          "trailer": 4003,
+          "total": 11639
+        },
+        "嘉義縣": {
+          "taxi": 1618,
+          "heavyTruck": 3142,
+          "bus": 1462,
+          "trailer": 2998,
+          "total": 9220
+        },
+        "屏東縣": {
+          "taxi": 2180,
+          "heavyTruck": 4971,
+          "bus": 2818,
+          "trailer": 6514,
+          "total": 16483
+        },
+        "台東縣": {
+          "taxi": 1131,
+          "heavyTruck": 1697,
+          "bus": 930,
+          "trailer": 1783,
+          "total": 5541
+        },
+        "花蓮縣": {
+          "taxi": 3015,
+          "heavyTruck": 2257,
+          "bus": 1826,
+          "trailer": 2688,
+          "total": 9786
+        },
+        "澎湖縣": {
+          "taxi": 633,
+          "heavyTruck": 408,
+          "bus": 535,
+          "trailer": 225,
+          "total": 1801
+        },
+        "基隆市": {
+          "taxi": 6158,
+          "heavyTruck": 2224,
+          "bus": 3140,
+          "trailer": 3253,
+          "total": 14775
+        },
+        "新竹市": {
+          "taxi": 1430,
+          "heavyTruck": 1515,
+          "bus": 952,
+          "trailer": 910,
+          "total": 4807
+        },
+        "嘉義市": {
+          "taxi": 918,
+          "heavyTruck": 1169,
+          "bus": 704,
+          "trailer": 971,
+          "total": 3762
+        },
+        "金門縣": {
+          "taxi": 1141,
+          "heavyTruck": 822,
+          "bus": 992,
+          "trailer": 509,
+          "total": 3464
+        },
+        "連江縣": {
+          "taxi": 174,
+          "heavyTruck": 104,
+          "bus": 194,
+          "trailer": 26,
+          "total": 498
+        }
+      }
+    },
+    {
+      "period": "107年底",
+      "totalNational": 458252,
+      "categories": {
+        "taxi": 154220,
+        "heavyTruck": 109448,
+        "bus": 91352,
+        "trailer": 103232
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 46544,
+          "heavyTruck": 14870,
+          "bus": 21563,
+          "trailer": 10116,
+          "total": 93093
+        },
+        "台北市": {
+          "taxi": 28745,
+          "heavyTruck": 4852,
+          "bus": 9173,
+          "trailer": 2860,
+          "total": 45630
+        },
+        "桃園市": {
+          "taxi": 13699,
+          "heavyTruck": 12795,
+          "bus": 8818,
+          "trailer": 10638,
+          "total": 45950
+        },
+        "台中市": {
+          "taxi": 13409,
+          "heavyTruck": 11740,
+          "bus": 10893,
+          "trailer": 11685,
+          "total": 47727
+        },
+        "台南市": {
+          "taxi": 7213,
+          "heavyTruck": 11210,
+          "bus": 4378,
+          "trailer": 7499,
+          "total": 30300
+        },
+        "高雄市": {
+          "taxi": 13672,
+          "heavyTruck": 13172,
+          "bus": 9631,
+          "trailer": 17381,
+          "total": 53856
+        },
+        "宜蘭縣": {
+          "taxi": 2128,
+          "heavyTruck": 2461,
+          "bus": 2271,
+          "trailer": 3376,
+          "total": 10236
+        },
+        "新竹縣": {
+          "taxi": 2066,
+          "heavyTruck": 2740,
+          "bus": 1604,
+          "trailer": 2685,
+          "total": 9095
+        },
+        "苗栗縣": {
+          "taxi": 1723,
+          "heavyTruck": 3323,
+          "bus": 1670,
+          "trailer": 3753,
+          "total": 10469
+        },
+        "彰化縣": {
+          "taxi": 2984,
+          "heavyTruck": 7529,
+          "bus": 3676,
+          "trailer": 6691,
+          "total": 20880
+        },
+        "南投縣": {
+          "taxi": 1601,
+          "heavyTruck": 2858,
+          "bus": 2877,
+          "trailer": 3108,
+          "total": 10444
+        },
+        "雲林縣": {
+          "taxi": 1930,
+          "heavyTruck": 4188,
+          "bus": 1431,
+          "trailer": 3952,
+          "total": 11501
+        },
+        "嘉義縣": {
+          "taxi": 1628,
+          "heavyTruck": 3029,
+          "bus": 1463,
+          "trailer": 2965,
+          "total": 9085
+        },
+        "屏東縣": {
+          "taxi": 2225,
+          "heavyTruck": 4812,
+          "bus": 2737,
+          "trailer": 6500,
+          "total": 16274
+        },
+        "台東縣": {
+          "taxi": 1143,
+          "heavyTruck": 1604,
+          "bus": 911,
+          "trailer": 1743,
+          "total": 5401
+        },
+        "花蓮縣": {
+          "taxi": 2931,
+          "heavyTruck": 2159,
+          "bus": 1787,
+          "trailer": 2592,
+          "total": 9469
+        },
+        "澎湖縣": {
+          "taxi": 647,
+          "heavyTruck": 409,
+          "bus": 528,
+          "trailer": 220,
+          "total": 1804
+        },
+        "基隆市": {
+          "taxi": 6149,
+          "heavyTruck": 2148,
+          "bus": 3134,
+          "trailer": 3112,
+          "total": 14543
+        },
+        "新竹市": {
+          "taxi": 1529,
+          "heavyTruck": 1454,
+          "bus": 934,
+          "trailer": 871,
+          "total": 4788
+        },
+        "嘉義市": {
+          "taxi": 931,
+          "heavyTruck": 1155,
+          "bus": 687,
+          "trailer": 951,
+          "total": 3724
+        },
+        "金門縣": {
+          "taxi": 1154,
+          "heavyTruck": 837,
+          "bus": 986,
+          "trailer": 511,
+          "total": 3488
+        },
+        "連江縣": {
+          "taxi": 169,
+          "heavyTruck": 103,
+          "bus": 200,
+          "trailer": 23,
+          "total": 495
+        }
+      }
+    },
+    {
+      "period": "108年底",
+      "totalNational": 455937,
+      "categories": {
+        "taxi": 156944,
+        "heavyTruck": 106793,
+        "bus": 90832,
+        "trailer": 101368
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 47215,
+          "heavyTruck": 14399,
+          "bus": 21395,
+          "trailer": 9806,
+          "total": 92815
+        },
+        "台北市": {
+          "taxi": 28438,
+          "heavyTruck": 4698,
+          "bus": 9000,
+          "trailer": 2688,
+          "total": 44824
+        },
+        "桃園市": {
+          "taxi": 14637,
+          "heavyTruck": 12747,
+          "bus": 9035,
+          "trailer": 10593,
+          "total": 47012
+        },
+        "台中市": {
+          "taxi": 14022,
+          "heavyTruck": 11421,
+          "bus": 10719,
+          "trailer": 11529,
+          "total": 47691
+        },
+        "台南市": {
+          "taxi": 7469,
+          "heavyTruck": 11064,
+          "bus": 4317,
+          "trailer": 7370,
+          "total": 30220
+        },
+        "高雄市": {
+          "taxi": 13817,
+          "heavyTruck": 12942,
+          "bus": 9716,
+          "trailer": 17164,
+          "total": 53639
+        },
+        "宜蘭縣": {
+          "taxi": 2173,
+          "heavyTruck": 2269,
+          "bus": 2314,
+          "trailer": 3204,
+          "total": 9960
+        },
+        "新竹縣": {
+          "taxi": 2187,
+          "heavyTruck": 2678,
+          "bus": 1592,
+          "trailer": 2636,
+          "total": 9093
+        },
+        "苗栗縣": {
+          "taxi": 1794,
+          "heavyTruck": 3210,
+          "bus": 1632,
+          "trailer": 3685,
+          "total": 10321
+        },
+        "彰化縣": {
+          "taxi": 3067,
+          "heavyTruck": 7362,
+          "bus": 3620,
+          "trailer": 6611,
+          "total": 20660
+        },
+        "南投縣": {
+          "taxi": 1625,
+          "heavyTruck": 2712,
+          "bus": 2833,
+          "trailer": 3079,
+          "total": 10249
+        },
+        "雲林縣": {
+          "taxi": 1919,
+          "heavyTruck": 4135,
+          "bus": 1419,
+          "trailer": 3907,
+          "total": 11380
+        },
+        "嘉義縣": {
+          "taxi": 1613,
+          "heavyTruck": 2980,
+          "bus": 1457,
+          "trailer": 2899,
+          "total": 8949
+        },
+        "屏東縣": {
+          "taxi": 2226,
+          "heavyTruck": 4706,
+          "bus": 2684,
+          "trailer": 6477,
+          "total": 16093
+        },
+        "台東縣": {
+          "taxi": 1145,
+          "heavyTruck": 1505,
+          "bus": 894,
+          "trailer": 1640,
+          "total": 5184
+        },
+        "花蓮縣": {
+          "taxi": 2916,
+          "heavyTruck": 2038,
+          "bus": 1748,
+          "trailer": 2524,
+          "total": 9226
+        },
+        "澎湖縣": {
+          "taxi": 652,
+          "heavyTruck": 418,
+          "bus": 533,
+          "trailer": 225,
+          "total": 1828
+        },
+        "基隆市": {
+          "taxi": 6041,
+          "heavyTruck": 2068,
+          "bus": 3131,
+          "trailer": 3000,
+          "total": 14240
+        },
+        "新竹市": {
+          "taxi": 1678,
+          "heavyTruck": 1429,
+          "bus": 932,
+          "trailer": 854,
+          "total": 4893
+        },
+        "嘉義市": {
+          "taxi": 929,
+          "heavyTruck": 1094,
+          "bus": 674,
+          "trailer": 929,
+          "total": 3626
+        },
+        "金門縣": {
+          "taxi": 1224,
+          "heavyTruck": 815,
+          "bus": 985,
+          "trailer": 526,
+          "total": 3550
+        },
+        "連江縣": {
+          "taxi": 157,
+          "heavyTruck": 103,
+          "bus": 202,
+          "trailer": 22,
+          "total": 484
+        }
+      }
+    },
+    {
+      "period": "109年底",
+      "totalNational": 455373,
+      "categories": {
+        "taxi": 158340,
+        "heavyTruck": 105257,
+        "bus": 90820,
+        "trailer": 100956
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 47769,
+          "heavyTruck": 14152,
+          "bus": 21478,
+          "trailer": 9633,
+          "total": 93032
+        },
+        "台北市": {
+          "taxi": 27970,
+          "heavyTruck": 4466,
+          "bus": 8829,
+          "trailer": 2565,
+          "total": 43830
+        },
+        "桃園市": {
+          "taxi": 15600,
+          "heavyTruck": 12842,
+          "bus": 9311,
+          "trailer": 10677,
+          "total": 48430
+        },
+        "台中市": {
+          "taxi": 14193,
+          "heavyTruck": 11329,
+          "bus": 10745,
+          "trailer": 11601,
+          "total": 47868
+        },
+        "台南市": {
+          "taxi": 7578,
+          "heavyTruck": 11066,
+          "bus": 4362,
+          "trailer": 7368,
+          "total": 30374
+        },
+        "高雄市": {
+          "taxi": 13636,
+          "heavyTruck": 12565,
+          "bus": 9570,
+          "trailer": 17077,
+          "total": 52848
+        },
+        "宜蘭縣": {
+          "taxi": 2213,
+          "heavyTruck": 2144,
+          "bus": 2293,
+          "trailer": 3177,
+          "total": 9827
+        },
+        "新竹縣": {
+          "taxi": 2262,
+          "heavyTruck": 2639,
+          "bus": 1591,
+          "trailer": 2618,
+          "total": 9110
+        },
+        "苗栗縣": {
+          "taxi": 1820,
+          "heavyTruck": 3162,
+          "bus": 1580,
+          "trailer": 3669,
+          "total": 10231
+        },
+        "彰化縣": {
+          "taxi": 3100,
+          "heavyTruck": 7197,
+          "bus": 3544,
+          "trailer": 6586,
+          "total": 20427
+        },
+        "南投縣": {
+          "taxi": 1631,
+          "heavyTruck": 2648,
+          "bus": 2797,
+          "trailer": 3099,
+          "total": 10175
+        },
+        "雲林縣": {
+          "taxi": 1941,
+          "heavyTruck": 4130,
+          "bus": 1466,
+          "trailer": 3903,
+          "total": 11440
+        },
+        "嘉義縣": {
+          "taxi": 1617,
+          "heavyTruck": 2951,
+          "bus": 1427,
+          "trailer": 2879,
+          "total": 8874
+        },
+        "屏東縣": {
+          "taxi": 2230,
+          "heavyTruck": 4621,
+          "bus": 2677,
+          "trailer": 6522,
+          "total": 16050
+        },
+        "台東縣": {
+          "taxi": 1149,
+          "heavyTruck": 1471,
+          "bus": 866,
+          "trailer": 1603,
+          "total": 5089
+        },
+        "花蓮縣": {
+          "taxi": 2872,
+          "heavyTruck": 2010,
+          "bus": 1732,
+          "trailer": 2508,
+          "total": 9122
+        },
+        "澎湖縣": {
+          "taxi": 664,
+          "heavyTruck": 429,
+          "bus": 530,
+          "trailer": 231,
+          "total": 1854
+        },
+        "基隆市": {
+          "taxi": 6009,
+          "heavyTruck": 2020,
+          "bus": 3215,
+          "trailer": 2928,
+          "total": 14172
+        },
+        "新竹市": {
+          "taxi": 1745,
+          "heavyTruck": 1410,
+          "bus": 924,
+          "trailer": 841,
+          "total": 4920
+        },
+        "嘉義市": {
+          "taxi": 939,
+          "heavyTruck": 1082,
+          "bus": 680,
+          "trailer": 926,
+          "total": 3627
+        },
+        "金門縣": {
+          "taxi": 1249,
+          "heavyTruck": 823,
+          "bus": 994,
+          "trailer": 521,
+          "total": 3587
+        },
+        "連江縣": {
+          "taxi": 153,
+          "heavyTruck": 100,
+          "bus": 209,
+          "trailer": 24,
+          "total": 486
+        }
+      }
+    },
+    {
+      "period": "110年底",
+      "totalNational": 450025,
+      "categories": {
+        "taxi": 157457,
+        "heavyTruck": 102898,
+        "bus": 89209,
+        "trailer": 100461
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 47376,
+          "heavyTruck": 13774,
+          "bus": 21213,
+          "trailer": 9460,
+          "total": 91823
+        },
+        "台北市": {
+          "taxi": 27183,
+          "heavyTruck": 4282,
+          "bus": 8471,
+          "trailer": 2430,
+          "total": 42366
+        },
+        "桃園市": {
+          "taxi": 16057,
+          "heavyTruck": 12725,
+          "bus": 9420,
+          "trailer": 10778,
+          "total": 48980
+        },
+        "台中市": {
+          "taxi": 14216,
+          "heavyTruck": 11127,
+          "bus": 10580,
+          "trailer": 11574,
+          "total": 47497
+        },
+        "台南市": {
+          "taxi": 7743,
+          "heavyTruck": 10847,
+          "bus": 4234,
+          "trailer": 7353,
+          "total": 30177
+        },
+        "高雄市": {
+          "taxi": 13211,
+          "heavyTruck": 12100,
+          "bus": 9240,
+          "trailer": 16978,
+          "total": 51529
+        },
+        "宜蘭縣": {
+          "taxi": 2219,
+          "heavyTruck": 2045,
+          "bus": 2267,
+          "trailer": 3133,
+          "total": 9664
+        },
+        "新竹縣": {
+          "taxi": 2311,
+          "heavyTruck": 2610,
+          "bus": 1581,
+          "trailer": 2585,
+          "total": 9087
+        },
+        "苗栗縣": {
+          "taxi": 1836,
+          "heavyTruck": 3104,
+          "bus": 1529,
+          "trailer": 3645,
+          "total": 10114
+        },
+        "彰化縣": {
+          "taxi": 3070,
+          "heavyTruck": 7024,
+          "bus": 3435,
+          "trailer": 6642,
+          "total": 20171
+        },
+        "南投縣": {
+          "taxi": 1682,
+          "heavyTruck": 2538,
+          "bus": 2713,
+          "trailer": 3086,
+          "total": 10019
+        },
+        "雲林縣": {
+          "taxi": 1983,
+          "heavyTruck": 4130,
+          "bus": 1450,
+          "trailer": 3930,
+          "total": 11493
+        },
+        "嘉義縣": {
+          "taxi": 1621,
+          "heavyTruck": 2860,
+          "bus": 1377,
+          "trailer": 2893,
+          "total": 8751
+        },
+        "屏東縣": {
+          "taxi": 2333,
+          "heavyTruck": 4560,
+          "bus": 2667,
+          "trailer": 6583,
+          "total": 16143
+        },
+        "台東縣": {
+          "taxi": 1164,
+          "heavyTruck": 1438,
+          "bus": 835,
+          "trailer": 1542,
+          "total": 4979
+        },
+        "花蓮縣": {
+          "taxi": 2816,
+          "heavyTruck": 1983,
+          "bus": 1708,
+          "trailer": 2506,
+          "total": 9013
+        },
+        "澎湖縣": {
+          "taxi": 643,
+          "heavyTruck": 422,
+          "bus": 537,
+          "trailer": 225,
+          "total": 1827
+        },
+        "基隆市": {
+          "taxi": 5898,
+          "heavyTruck": 1936,
+          "bus": 3187,
+          "trailer": 2848,
+          "total": 13869
+        },
+        "新竹市": {
+          "taxi": 1756,
+          "heavyTruck": 1386,
+          "bus": 909,
+          "trailer": 819,
+          "total": 4870
+        },
+        "嘉義市": {
+          "taxi": 926,
+          "heavyTruck": 1079,
+          "bus": 662,
+          "trailer": 909,
+          "total": 3576
+        },
+        "金門縣": {
+          "taxi": 1252,
+          "heavyTruck": 830,
+          "bus": 989,
+          "trailer": 521,
+          "total": 3592
+        },
+        "連江縣": {
+          "taxi": 161,
+          "heavyTruck": 98,
+          "bus": 205,
+          "trailer": 21,
+          "total": 485
+        }
+      }
+    },
+    {
+      "period": "111年底",
+      "totalNational": 445353,
+      "categories": {
+        "taxi": 156798,
+        "heavyTruck": 100745,
+        "bus": 87177,
+        "trailer": 100633
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 46845,
+          "heavyTruck": 13341,
+          "bus": 20760,
+          "trailer": 9325,
+          "total": 90271
+        },
+        "台北市": {
+          "taxi": 26278,
+          "heavyTruck": 4083,
+          "bus": 8119,
+          "trailer": 2331,
+          "total": 40811
+        },
+        "桃園市": {
+          "taxi": 16548,
+          "heavyTruck": 12702,
+          "bus": 9452,
+          "trailer": 10857,
+          "total": 49559
+        },
+        "台中市": {
+          "taxi": 14402,
+          "heavyTruck": 10903,
+          "bus": 10338,
+          "trailer": 11677,
+          "total": 47320
+        },
+        "台南市": {
+          "taxi": 7905,
+          "heavyTruck": 10700,
+          "bus": 4223,
+          "trailer": 7455,
+          "total": 30283
+        },
+        "高雄市": {
+          "taxi": 12991,
+          "heavyTruck": 11775,
+          "bus": 8829,
+          "trailer": 16947,
+          "total": 50542
+        },
+        "宜蘭縣": {
+          "taxi": 2203,
+          "heavyTruck": 1910,
+          "bus": 2213,
+          "trailer": 3076,
+          "total": 9402
+        },
+        "新竹縣": {
+          "taxi": 2352,
+          "heavyTruck": 2579,
+          "bus": 1561,
+          "trailer": 2570,
+          "total": 9062
+        },
+        "苗栗縣": {
+          "taxi": 1862,
+          "heavyTruck": 3027,
+          "bus": 1495,
+          "trailer": 3674,
+          "total": 10058
+        },
+        "彰化縣": {
+          "taxi": 3161,
+          "heavyTruck": 6837,
+          "bus": 3358,
+          "trailer": 6752,
+          "total": 20108
+        },
+        "南投縣": {
+          "taxi": 1733,
+          "heavyTruck": 2430,
+          "bus": 2628,
+          "trailer": 3123,
+          "total": 9914
+        },
+        "雲林縣": {
+          "taxi": 2023,
+          "heavyTruck": 4134,
+          "bus": 1428,
+          "trailer": 3961,
+          "total": 11546
+        },
+        "嘉義縣": {
+          "taxi": 1632,
+          "heavyTruck": 2809,
+          "bus": 1341,
+          "trailer": 2916,
+          "total": 8698
+        },
+        "屏東縣": {
+          "taxi": 2430,
+          "heavyTruck": 4555,
+          "bus": 2583,
+          "trailer": 6711,
+          "total": 16279
+        },
+        "台東縣": {
+          "taxi": 1155,
+          "heavyTruck": 1375,
+          "bus": 799,
+          "trailer": 1514,
+          "total": 4843
+        },
+        "花蓮縣": {
+          "taxi": 2763,
+          "heavyTruck": 1920,
+          "bus": 1639,
+          "trailer": 2493,
+          "total": 8815
+        },
+        "澎湖縣": {
+          "taxi": 653,
+          "heavyTruck": 427,
+          "bus": 567,
+          "trailer": 230,
+          "total": 1877
+        },
+        "基隆市": {
+          "taxi": 5707,
+          "heavyTruck": 1886,
+          "bus": 3110,
+          "trailer": 2769,
+          "total": 13472
+        },
+        "新竹市": {
+          "taxi": 1765,
+          "heavyTruck": 1360,
+          "bus": 890,
+          "trailer": 801,
+          "total": 4816
+        },
+        "嘉義市": {
+          "taxi": 932,
+          "heavyTruck": 1057,
+          "bus": 663,
+          "trailer": 917,
+          "total": 3569
+        },
+        "金門縣": {
+          "taxi": 1276,
+          "heavyTruck": 838,
+          "bus": 967,
+          "trailer": 512,
+          "total": 3593
+        },
+        "連江縣": {
+          "taxi": 182,
+          "heavyTruck": 97,
+          "bus": 214,
+          "trailer": 22,
+          "total": 515
+        }
+      }
+    },
+    {
+      "period": "112年底",
+      "totalNational": 449810,
+      "categories": {
+        "taxi": 163908,
+        "heavyTruck": 99407,
+        "bus": 86398,
+        "trailer": 100097
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 48105,
+          "heavyTruck": 13036,
+          "bus": 20419,
+          "trailer": 9139,
+          "total": 90699
+        },
+        "台北市": {
+          "taxi": 26423,
+          "heavyTruck": 3948,
+          "bus": 7906,
+          "trailer": 2266,
+          "total": 40543
+        },
+        "桃園市": {
+          "taxi": 17733,
+          "heavyTruck": 12615,
+          "bus": 9696,
+          "trailer": 10976,
+          "total": 51020
+        },
+        "台中市": {
+          "taxi": 15595,
+          "heavyTruck": 10844,
+          "bus": 10183,
+          "trailer": 11636,
+          "total": 48258
+        },
+        "台南市": {
+          "taxi": 8685,
+          "heavyTruck": 10600,
+          "bus": 4177,
+          "trailer": 7476,
+          "total": 30938
+        },
+        "高雄市": {
+          "taxi": 13725,
+          "heavyTruck": 11570,
+          "bus": 8709,
+          "trailer": 16767,
+          "total": 50771
+        },
+        "宜蘭縣": {
+          "taxi": 2338,
+          "heavyTruck": 1837,
+          "bus": 2181,
+          "trailer": 3025,
+          "total": 9381
+        },
+        "新竹縣": {
+          "taxi": 2620,
+          "heavyTruck": 2563,
+          "bus": 1569,
+          "trailer": 2548,
+          "total": 9300
+        },
+        "苗栗縣": {
+          "taxi": 1975,
+          "heavyTruck": 2973,
+          "bus": 1490,
+          "trailer": 3643,
+          "total": 10081
+        },
+        "彰化縣": {
+          "taxi": 3490,
+          "heavyTruck": 6737,
+          "bus": 3323,
+          "trailer": 6772,
+          "total": 20322
+        },
+        "南投縣": {
+          "taxi": 1824,
+          "heavyTruck": 2377,
+          "bus": 2592,
+          "trailer": 3113,
+          "total": 9906
+        },
+        "雲林縣": {
+          "taxi": 2123,
+          "heavyTruck": 4091,
+          "bus": 1425,
+          "trailer": 3971,
+          "total": 11610
+        },
+        "嘉義縣": {
+          "taxi": 1738,
+          "heavyTruck": 2757,
+          "bus": 1321,
+          "trailer": 2934,
+          "total": 8750
+        },
+        "屏東縣": {
+          "taxi": 2644,
+          "heavyTruck": 4566,
+          "bus": 2571,
+          "trailer": 6720,
+          "total": 16501
+        },
+        "台東縣": {
+          "taxi": 1188,
+          "heavyTruck": 1360,
+          "bus": 802,
+          "trailer": 1509,
+          "total": 4859
+        },
+        "花蓮縣": {
+          "taxi": 2817,
+          "heavyTruck": 1903,
+          "bus": 1626,
+          "trailer": 2463,
+          "total": 8809
+        },
+        "澎湖縣": {
+          "taxi": 698,
+          "heavyTruck": 451,
+          "bus": 564,
+          "trailer": 246,
+          "total": 1959
+        },
+        "基隆市": {
+          "taxi": 5726,
+          "heavyTruck": 1822,
+          "bus": 3138,
+          "trailer": 2691,
+          "total": 13377
+        },
+        "新竹市": {
+          "taxi": 1932,
+          "heavyTruck": 1354,
+          "bus": 885,
+          "trailer": 781,
+          "total": 4952
+        },
+        "嘉義市": {
+          "taxi": 996,
+          "heavyTruck": 1069,
+          "bus": 658,
+          "trailer": 897,
+          "total": 3620
+        },
+        "金門縣": {
+          "taxi": 1352,
+          "heavyTruck": 830,
+          "bus": 953,
+          "trailer": 502,
+          "total": 3637
+        },
+        "連江縣": {
+          "taxi": 181,
+          "heavyTruck": 104,
+          "bus": 210,
+          "trailer": 22,
+          "total": 517
+        }
+      }
+    },
+    {
+      "period": "113年底",
+      "totalNational": 453694,
+      "categories": {
+        "taxi": 172552,
+        "heavyTruck": 97248,
+        "bus": 85720,
+        "trailer": 98174
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 49734,
+          "heavyTruck": 12617,
+          "bus": 20115,
+          "trailer": 8957,
+          "total": 91423
+        },
+        "台北市": {
+          "taxi": 26632,
+          "heavyTruck": 3805,
+          "bus": 7719,
+          "trailer": 2186,
+          "total": 40342
+        },
+        "桃園市": {
+          "taxi": 19232,
+          "heavyTruck": 12379,
+          "bus": 9963,
+          "trailer": 10936,
+          "total": 52510
+        },
+        "台中市": {
+          "taxi": 17264,
+          "heavyTruck": 10564,
+          "bus": 9908,
+          "trailer": 11382,
+          "total": 49118
+        },
+        "台南市": {
+          "taxi": 9226,
+          "heavyTruck": 10394,
+          "bus": 4166,
+          "trailer": 7409,
+          "total": 31195
+        },
+        "高雄市": {
+          "taxi": 14459,
+          "heavyTruck": 11315,
+          "bus": 8540,
+          "trailer": 16322,
+          "total": 50636
+        },
+        "宜蘭縣": {
+          "taxi": 2504,
+          "heavyTruck": 1786,
+          "bus": 2219,
+          "trailer": 2929,
+          "total": 9438
+        },
+        "新竹縣": {
+          "taxi": 2921,
+          "heavyTruck": 2536,
+          "bus": 1579,
+          "trailer": 2528,
+          "total": 9564
+        },
+        "苗栗縣": {
+          "taxi": 2207,
+          "heavyTruck": 2930,
+          "bus": 1517,
+          "trailer": 3535,
+          "total": 10189
+        },
+        "彰化縣": {
+          "taxi": 3881,
+          "heavyTruck": 6574,
+          "bus": 3332,
+          "trailer": 6666,
+          "total": 20453
+        },
+        "南投縣": {
+          "taxi": 2016,
+          "heavyTruck": 2310,
+          "bus": 2586,
+          "trailer": 3105,
+          "total": 10017
+        },
+        "雲林縣": {
+          "taxi": 2266,
+          "heavyTruck": 4115,
+          "bus": 1449,
+          "trailer": 3848,
+          "total": 11678
+        },
+        "嘉義縣": {
+          "taxi": 1809,
+          "heavyTruck": 2696,
+          "bus": 1301,
+          "trailer": 2853,
+          "total": 8659
+        },
+        "屏東縣": {
+          "taxi": 2897,
+          "heavyTruck": 4537,
+          "bus": 2592,
+          "trailer": 6617,
+          "total": 16643
+        },
+        "台東縣": {
+          "taxi": 1278,
+          "heavyTruck": 1326,
+          "bus": 803,
+          "trailer": 1452,
+          "total": 4859
+        },
+        "花蓮縣": {
+          "taxi": 2853,
+          "heavyTruck": 1841,
+          "bus": 1563,
+          "trailer": 2431,
+          "total": 8688
+        },
+        "澎湖縣": {
+          "taxi": 733,
+          "heavyTruck": 451,
+          "bus": 551,
+          "trailer": 239,
+          "total": 1974
+        },
+        "基隆市": {
+          "taxi": 5821,
+          "heavyTruck": 1763,
+          "bus": 3146,
+          "trailer": 2601,
+          "total": 13331
+        },
+        "新竹市": {
+          "taxi": 2154,
+          "heavyTruck": 1312,
+          "bus": 873,
+          "trailer": 770,
+          "total": 5109
+        },
+        "嘉義市": {
+          "taxi": 1069,
+          "heavyTruck": 1091,
+          "bus": 658,
+          "trailer": 885,
+          "total": 3703
+        },
+        "金門縣": {
+          "taxi": 1406,
+          "heavyTruck": 806,
+          "bus": 931,
+          "trailer": 503,
+          "total": 3646
+        },
+        "連江縣": {
+          "taxi": 190,
+          "heavyTruck": 100,
+          "bus": 209,
+          "trailer": 20,
+          "total": 519
+        }
+      }
+    },
+    {
+      "period": "114年底",
+      "totalNational": 455084,
+      "categories": {
+        "taxi": 178825,
+        "heavyTruck": 94985,
+        "bus": 85166,
+        "trailer": 96108
+      },
+      "regions": {
+        "新北市": {
+          "taxi": 50769,
+          "heavyTruck": 12210,
+          "bus": 19859,
+          "trailer": 8683,
+          "total": 91521
+        },
+        "台北市": {
+          "taxi": 26525,
+          "heavyTruck": 3602,
+          "bus": 7372,
+          "trailer": 2045,
+          "total": 39544
+        },
+        "桃園市": {
+          "taxi": 20789,
+          "heavyTruck": 12323,
+          "bus": 10178,
+          "trailer": 10836,
+          "total": 54126
+        },
+        "台中市": {
+          "taxi": 18168,
+          "heavyTruck": 10353,
+          "bus": 9795,
+          "trailer": 11208,
+          "total": 49524
+        },
+        "台南市": {
+          "taxi": 9744,
+          "heavyTruck": 10222,
+          "bus": 4250,
+          "trailer": 7355,
+          "total": 31571
+        },
+        "高雄市": {
+          "taxi": 15029,
+          "heavyTruck": 10986,
+          "bus": 8478,
+          "trailer": 15900,
+          "total": 50393
+        },
+        "宜蘭縣": {
+          "taxi": 2645,
+          "heavyTruck": 1703,
+          "bus": 2238,
+          "trailer": 2820,
+          "total": 9406
+        },
+        "新竹縣": {
+          "taxi": 3171,
+          "heavyTruck": 2478,
+          "bus": 1564,
+          "trailer": 2444,
+          "total": 9657
+        },
+        "苗栗縣": {
+          "taxi": 2360,
+          "heavyTruck": 2854,
+          "bus": 1520,
+          "trailer": 3466,
+          "total": 10200
+        },
+        "彰化縣": {
+          "taxi": 4218,
+          "heavyTruck": 6414,
+          "bus": 3349,
+          "trailer": 6553,
+          "total": 20534
+        },
+        "南投縣": {
+          "taxi": 2103,
+          "heavyTruck": 2290,
+          "bus": 2578,
+          "trailer": 3041,
+          "total": 10012
+        },
+        "雲林縣": {
+          "taxi": 2382,
+          "heavyTruck": 4043,
+          "bus": 1434,
+          "trailer": 3814,
+          "total": 11673
+        },
+        "嘉義縣": {
+          "taxi": 1979,
+          "heavyTruck": 2712,
+          "bus": 1294,
+          "trailer": 2751,
+          "total": 8736
+        },
+        "屏東縣": {
+          "taxi": 3143,
+          "heavyTruck": 4419,
+          "bus": 2563,
+          "trailer": 6542,
+          "total": 16667
+        },
+        "台東縣": {
+          "taxi": 1272,
+          "heavyTruck": 1255,
+          "bus": 813,
+          "trailer": 1385,
+          "total": 4725
+        },
+        "花蓮縣": {
+          "taxi": 2892,
+          "heavyTruck": 1780,
+          "bus": 1543,
+          "trailer": 2397,
+          "total": 8612
+        },
+        "澎湖縣": {
+          "taxi": 749,
+          "heavyTruck": 448,
+          "bus": 549,
+          "trailer": 243,
+          "total": 1989
+        },
+        "基隆市": {
+          "taxi": 5796,
+          "heavyTruck": 1663,
+          "bus": 3141,
+          "trailer": 2487,
+          "total": 13087
+        },
+        "新竹市": {
+          "taxi": 2327,
+          "heavyTruck": 1257,
+          "bus": 868,
+          "trailer": 748,
+          "total": 5200
+        },
+        "嘉義市": {
+          "taxi": 1151,
+          "heavyTruck": 1087,
+          "bus": 678,
+          "trailer": 874,
+          "total": 3790
+        },
+        "金門縣": {
+          "taxi": 1422,
+          "heavyTruck": 792,
+          "bus": 897,
+          "trailer": 494,
+          "total": 3605
+        },
+        "連江縣": {
+          "taxi": 191,
+          "heavyTruck": 94,
+          "bus": 205,
+          "trailer": 22,
+          "total": 512
+        }
+      }
+    }
+  ]
+}

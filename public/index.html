@@ -557,11 +557,55 @@
                 const fetchData = async () => {
                     loading.value = true;
                     try {
-                        const res = await fetch('/public/professional-driver-distribution');
-                        const json = await res.json();
-                        data.value = json.data;
-                    } catch (e) {
-                        alert('無法取得 API 資料');
+                        // 1. 嘗試呼叫 Express Node.js API (本地開發模式)
+                        try {
+                            const res = await fetch('/public/professional-driver-distribution');
+                            if (res.ok) {
+                                const json = await res.json();
+                                if (json && json.data) {
+                                    data.value = json.data;
+                                    return;
+                                }
+                            }
+                        } catch (e) {
+                            // 忽略 404 錯誤，轉入 GitHub Pages 靜態讀取模式
+                        }
+                        // 2. GitHub Pages 純靜態發布模式：直接讀取 data/history_db.json
+                        const resStatic = await fetch('./data/history_db.json');
+                        if (resStatic.ok) {
+                            const db = await resStatic.json();
+                            const series = db.series || [];
+                            const latest = series[series.length - 1] || {};
+                            data.value = {
+                                dataAsOf: latest.period || '114年底',
+                                sourceStatus: 'LIVE_HISTORICAL_DB',
+                                totalNational: latest.totalNational || 455084,
+                                distribution: Object.entries(latest.regions || {}).map(([region, bd]) => ({
+                                    region,
+                                    total: bd.total,
+                                    breakdown: bd
+                                })),
+                                trendData: {
+                                    periods: db.periods || [],
+                                    nationalTotalHistory: series.map(s => s.totalNational),
+                                    categoryHistory: {
+                                        taxi: series.map(s => s.categories.taxi),
+                                        heavyTruck: series.map(s => s.categories.heavyTruck),
+                                        bus: series.map(s => s.categories.bus),
+                                        trailer: series.map(s => s.categories.trailer)
+                                    }
+                                },
+                                source: {
+                                    name: '領有各型機動車駕駛執照人數 (歷史 CSV 匯入檔)',
+                                    publisher: '交通部公路局',
+                                    url: 'https://stat.thb.gov.tw/'
+                                }
+                            };
+                        } else {
+                            throw new Error('無法載入歷史資料庫');
+                        }
+                    } catch (err) {
+                        console.error('Fetch error:', err);
                     } finally {
                         loading.value = false;
                     }

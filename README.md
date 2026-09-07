@@ -27,3 +27,17 @@
 ### 1. 安裝依賴套件
 ```bash
 npm install
+```
+
+### 2. 執行 Excel ETL 自動正規化 (選擇性)
+將從公路局下載的 Excel 報表放至 excel_imports/ 資料夾，並執行：
+
+```bash
+node normalizeExcelImports.js
+```
+
+### 3. 啟動 POC 伺服器
+```bash
+npm start
+```
+開啟瀏覽器造訪: http://localhost:3000
